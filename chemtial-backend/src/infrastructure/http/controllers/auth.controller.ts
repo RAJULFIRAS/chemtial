@@ -1,18 +1,18 @@
 import { Request, Response, NextFunction } from "express";
-import { RegisterUseCase } from "../../../application/use-cases/auth/register.use-case";
-import { LoginUseCase } from "../../../application/use-cases/auth/login.use-case";
-import { RefreshTokenUseCase } from "../../../application/use-cases/auth/refresh-token.use-case";
-import { ForgotPasswordUseCase } from "../../../application/use-cases/auth/forgot-password.use-case";
-import { ResetPasswordUseCase } from "../../../application/use-cases/auth/reset-password.use-case";
+import { RegisterUseCase } from "../../../application/use-cases/auth/register.use-case.js";
+import { LoginUseCase } from "../../../application/use-cases/auth/login.use-case.js";
+import { RefreshTokenUseCase } from "../../../application/use-cases/auth/refresh-token.use-case.js";
+import { ForgotPasswordUseCase } from "../../../application/use-cases/auth/forgot-password.use-case.js";
+import { ResetPasswordUseCase } from "../../../application/use-cases/auth/reset-password.use-case.js";
 import {
   registerSchema,
   loginSchema,
   refreshTokenSchema,
-} from "../../../application/dtos/auth.dto";
+} from "../../../application/dtos/auth.dto.js";
 import {
   forgotPasswordSchema,
   resetPasswordSchema,
-} from "../../../application/dtos/password-reset.dto";
+} from "../../../application/dtos/password-reset.dto.js";
 
 export class AuthController {
   constructor(
@@ -64,11 +64,11 @@ export class AuthController {
   ): Promise<void> {
     try {
       const validated = forgotPasswordSchema.parse(req.body);
-      const result = await this.forgotPasswordUseCase.execute(validated);
+      await this.forgotPasswordUseCase.execute(validated);
       res.status(200).json({
         success: true,
-        data: result,
-        message: "If the email exists, a password reset link has been sent.",
+        message:
+          "If the email is registered, we've sent a password reset link to it.",
         timestamp: new Date().toISOString(),
       });
     } catch (error) {

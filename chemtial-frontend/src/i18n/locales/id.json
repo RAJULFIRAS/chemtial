@@ -269,7 +269,8 @@
     "reset_success": "Password berhasil direset. Silakan login.",
     "reset_failed": "Gagal reset password",
     "forgot_success": "Permintaan reset password berhasil dikirim",
-    "forgot_failed": "Gagal mengirim permintaan"
+    "forgot_failed": "Gagal mengirim permintaan",
+    "check_email_hint": "Tidak menerima email? Cek folder spam atau tunggu beberapa menit sebelum mencoba lagi."
   },
   "products": {
     "title": "Semua Produk",

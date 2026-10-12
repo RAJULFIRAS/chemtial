@@ -4,10 +4,15 @@ import {
   getLocalizedDescription,
 } from "../../../src/utils/i18n-content";
 
-const mockI18n = { language: "en" };
 vi.mock("../../../src/i18n", () => ({
-  default: mockI18n,
+  default: {
+    language: "en",
+  },
 }));
+
+import i18n from "../../../src/i18n";
+
+const mockI18n = i18n as unknown as { language: string };
 
 describe("i18n-content utils", () => {
   beforeEach(() => {

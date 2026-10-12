@@ -269,7 +269,8 @@
     "reset_success": "Password reset successfully. Please login.",
     "reset_failed": "Failed to reset password",
     "forgot_success": "Password reset request sent successfully",
-    "forgot_failed": "Failed to send request"
+    "forgot_failed": "Failed to send request",
+    "check_email_hint": "Didn't receive the email? Check your spam folder or wait a few minutes before trying again."
   },
   "products": {
     "title": "All Products",

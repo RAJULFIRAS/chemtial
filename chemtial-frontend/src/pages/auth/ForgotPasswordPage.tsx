@@ -13,17 +13,13 @@ const ForgotPasswordPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [sent, setSent] = useState(false);
-  const [devToken, setDevToken] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const result = await authApi.forgotPassword(email);
+      await authApi.forgotPassword(email);
       setSent(true);
-      if (result.data?.resetToken) {
-        setDevToken(result.data.resetToken);
-      }
     } catch (error: unknown) {
       const message =
         error instanceof Error ? error.message : t("auth.forgot_failed");
@@ -102,24 +98,12 @@ const ForgotPasswordPage: React.FC = () => {
                   __html: t("auth.check_email_desc", { email }),
                 }}
               />
-            </div>
-
-            {devToken && (
-              <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
-                <p className="text-xs text-yellow-700 font-medium mb-1">
-                  {t("auth.dev_token")}
+              <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-xs text-blue-800 text-center">
+                  {t("auth.check_email_hint")}
                 </p>
-                <p className="text-xs font-mono text-yellow-900 break-all">
-                  {devToken}
-                </p>
-                <Link
-                  to={`/reset-password?token=${devToken}`}
-                  className="text-xs text-primary hover:underline mt-2 inline-block"
-                >
-                  {t("auth.click_to_reset")}
-                </Link>
               </div>
-            )}
+            </div>
 
             <Link
               to="/login"

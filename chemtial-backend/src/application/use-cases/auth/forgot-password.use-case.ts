@@ -1,15 +1,20 @@
 import crypto from "crypto";
-import { UserRepository } from "../../../domain/repositories/user.repository";
-import { ForgotPasswordDTO } from "../../dtos/password-reset.dto";
+import { UserRepository } from "../../../domain/repositories/user.repository.js";
+import { ForgotPasswordDTO } from "../../dtos/password-reset.dto.js";
+import { emailService } from "../../../infrastructure/email/email.service.js";
+import { logger } from "../../../shared/utils/logger.js";
 
 export class ForgotPasswordUseCase {
   constructor(private readonly userRepository: UserRepository) {}
 
-  async execute(input: ForgotPasswordDTO): Promise<{ resetToken?: string }> {
+  async execute(input: ForgotPasswordDTO): Promise<void> {
     const user = await this.userRepository.findByEmail(input.email);
 
     if (!user) {
-      return {};
+      logger.info(
+        `[ForgotPassword] Reset requested for unknown email: ${input.email}`,
+      );
+      return;
     }
 
     const token = crypto.randomBytes(32).toString("hex");
@@ -18,11 +23,14 @@ export class ForgotPasswordUseCase {
     user.updateResetToken(token, expiry);
     await this.userRepository.save(user);
 
-    if (process.env.NODE_ENV === "development") {
-      console.log(`Password reset token for ${user.email}: ${token}`);
-      return { resetToken: token };
+    try {
+      await emailService.sendPasswordReset(user.email, user.name, token);
+      logger.info(`[ForgotPassword] Reset email sent to ${user.email}`);
+    } catch (error) {
+      logger.error(
+        { err: error },
+        `[ForgotPassword] Failed to send email to ${user.email}`,
+      );
     }
-
-    return {};
   }
 }

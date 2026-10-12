@@ -35,6 +35,18 @@ const envSchema = z.object({
   SEARCH_RATE_LIMIT_WINDOW: z.string().transform(Number).default("60000"),
   SEARCH_RATE_LIMIT_MAX: z.string().transform(Number).default("60"),
 
+  SMTP_HOST: z.string().optional(),
+  SMTP_PORT: z.string().transform(Number).default("587"),
+  SMTP_SECURE: z
+    .string()
+    .transform((v) => v === "true")
+    .default("false"),
+  SMTP_USER: z.string().optional(),
+  SMTP_PASS: z.string().optional(),
+  SMTP_FROM_NAME: z.string().default("Chemtial"),
+  SMTP_FROM_EMAIL: z.string().email().default("noreply@chemtial.com"),
+  FRONTEND_URL: z.string().url().default("http://localhost:5000"),
+
   VOUCHER_CLAIM_RATE_LIMIT_WINDOW: z
     .string()
     .transform(Number)
@@ -88,6 +100,10 @@ export const validateEnv = (): EnvConfig => {
     return _config;
   } catch (error) {
     console.error("Invalid environment variables:", error);
+    if (process.env.NODE_ENV === "test") {
+      throw error;
+    }
+
     process.exit(1);
   }
 };

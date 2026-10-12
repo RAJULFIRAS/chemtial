@@ -2,16 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import VoucherCard from "../../../src/components/voucher/VoucherCard";
 
-vi.mock("react-i18next", () => ({
-  useTranslation: () => ({
-    t: (k: string, opts?: any) => {
-      if (opts?.amount) return `${k} ${opts.amount}`;
-      if (opts?.date) return `${k} ${opts.date}`;
-      return k;
-    },
-  }),
-}));
-
 const baseVoucher = {
   id: "v1",
   code: "CHEM10",
