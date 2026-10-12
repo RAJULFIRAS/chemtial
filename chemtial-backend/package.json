@@ -37,11 +37,11 @@
     "multer": "^2.4.0",
     "nodemailer": "^10.1.0",
     "pino": "^8.17.2",
-    "tsx": "^4.7.0",
     "pino-pretty": "^10.3.1",
     "react-hook-form": "^7.88.0",
     "react-hot-toast": "^2.6.0",
     "stripe": "^22.5.0",
+    "tsx": "^4.7.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
