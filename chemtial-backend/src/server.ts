@@ -1,4 +1,4 @@
-import "./config/load-env.js";
+import "./config/load-env";
 
 import express from "express";
 import cors from "cors";

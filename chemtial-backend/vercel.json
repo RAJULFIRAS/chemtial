@@ -1,7 +1,7 @@
 {
-  "version": 2,
   "buildCommand": "prisma generate && tsc",
   "installCommand": "npm install",
+  "framework": null,
   "functions": {
     "api/index.ts": {
       "includeFiles": "prisma/**",
@@ -9,10 +9,5 @@
       "memory": 1024
     }
   },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/api/index.ts"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/api/index.ts" }]
 }
