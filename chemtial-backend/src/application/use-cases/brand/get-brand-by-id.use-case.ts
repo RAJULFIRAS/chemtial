@@ -1,6 +1,6 @@
-import { BrandRepository } from "../../../domain/repositories/brand.repository";
-import { BrandResponse } from "../../dtos/brand.dto";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { BrandRepository } from "../../../domain/repositories/brand.repository.js";
+import { BrandResponse } from "../../dtos/brand.dto.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class GetBrandByIdUseCase {
   constructor(private readonly brandRepository: BrandRepository) {}

@@ -1,10 +1,10 @@
-import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository";
-import { OrderRepository } from "../../../domain/repositories/order.repository";
+import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository.js";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
 import {
   NotFoundError,
   ValidationError,
   ForbiddenError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 export interface ValidateVoucherInput {
   voucherUsageId: string;

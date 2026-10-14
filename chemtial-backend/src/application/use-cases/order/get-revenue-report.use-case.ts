@@ -1,4 +1,4 @@
-import { OrderRepository } from "../../../domain/repositories/order.repository";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
 
 export type RevenueRange =
   | "day"

@@ -1,18 +1,18 @@
 import { Request, Response, NextFunction } from "express";
-import { GetVouchersUseCase } from "../../../application/use-cases/voucher/get-vouchers.use-case";
-import { GetVoucherByIdUseCase } from "../../../application/use-cases/voucher/get-voucher-by-id.use-case";
-import { CreateVoucherUseCase } from "../../../application/use-cases/voucher/create-voucher.use-case";
-import { UpdateVoucherUseCase } from "../../../application/use-cases/voucher/update-voucher.use-case";
-import { DeleteVoucherUseCase } from "../../../application/use-cases/voucher/delete-voucher.use-case";
-import { ValidateVoucherUseCase } from "../../../application/use-cases/voucher/validate-voucher.use-case";
-import { ClaimVoucherUseCase } from "../../../application/use-cases/voucher/claim-voucher.use-case";
-import { GetMyVouchersUseCase } from "../../../application/use-cases/voucher/get-my-vouchers.use-case";
+import { GetVouchersUseCase } from "../../../application/use-cases/voucher/get-vouchers.use-case.js";
+import { GetVoucherByIdUseCase } from "../../../application/use-cases/voucher/get-voucher-by-id.use-case.js";
+import { CreateVoucherUseCase } from "../../../application/use-cases/voucher/create-voucher.use-case.js";
+import { UpdateVoucherUseCase } from "../../../application/use-cases/voucher/update-voucher.use-case.js";
+import { DeleteVoucherUseCase } from "../../../application/use-cases/voucher/delete-voucher.use-case.js";
+import { ValidateVoucherUseCase } from "../../../application/use-cases/voucher/validate-voucher.use-case.js";
+import { ClaimVoucherUseCase } from "../../../application/use-cases/voucher/claim-voucher.use-case.js";
+import { GetMyVouchersUseCase } from "../../../application/use-cases/voucher/get-my-vouchers.use-case.js";
 import {
   createVoucherSchema,
   updateVoucherSchema,
   validateVoucherSchema,
-} from "../../../application/dtos/voucher.dto";
-import { UnauthorizedError } from "../../../shared/exceptions/app.error";
+} from "../../../application/dtos/voucher.dto.js";
+import { UnauthorizedError } from "../../../shared/exceptions/app.error.js";
 
 export class VoucherController {
   constructor(

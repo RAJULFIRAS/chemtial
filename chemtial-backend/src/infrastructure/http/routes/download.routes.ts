@@ -1,11 +1,11 @@
 import { Router } from "express";
 import rateLimit from "express-rate-limit";
-import { DownloadController } from "../controllers/download.controller";
+import { DownloadController } from "../controllers/download.controller.js";
 import {
   authMiddleware,
   adminMiddleware,
-} from "../middlewares/auth.middleware";
-import { JwtService } from "../../auth/jwt.service";
+} from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../auth/jwt.service.js";
 
 const trackLimiter = rateLimit({
   windowMs: 60 * 1000,

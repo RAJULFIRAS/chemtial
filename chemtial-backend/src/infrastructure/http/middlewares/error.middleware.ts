@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { ZodError } from "zod";
-import { AppError } from "../../../shared/exceptions/app.error";
-import { logger } from "../../../shared/utils/logger";
+import { AppError } from "../../../shared/exceptions/app.error.js";
+import { logger } from "../../../shared/utils/logger.js";
 
 export const errorMiddleware = (
   err: Error,

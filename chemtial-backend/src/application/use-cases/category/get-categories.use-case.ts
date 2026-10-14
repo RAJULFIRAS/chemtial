@@ -1,5 +1,5 @@
-import { CategoryRepository } from "../../../domain/repositories/category.repository";
-import { CategoryResponse } from "../../dtos/category.dto";
+import { CategoryRepository } from "../../../domain/repositories/category.repository.js";
+import { CategoryResponse } from "../../dtos/category.dto.js";
 
 export class GetCategoriesUseCase {
   constructor(private readonly categoryRepository: CategoryRepository) {}

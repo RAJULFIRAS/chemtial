@@ -1,5 +1,5 @@
-import { Cart } from "../entities/cart.entity";
-import { AddToCartDTO } from "../../application/dtos/cart.dto";
+import { Cart } from "../entities/cart.entity.js";
+import { AddToCartDTO } from "../../application/dtos/cart.dto.js";
 
 export interface CartRepository {
   findByUserId(userId: string): Promise<Cart | null>;

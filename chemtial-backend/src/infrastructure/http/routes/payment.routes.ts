@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { PaymentController } from "../controllers/payment.controller";
-import { authMiddleware } from "../middlewares/auth.middleware";
-import { JwtService } from "../../auth/jwt.service";
+import { PaymentController } from "../controllers/payment.controller.js";
+import { authMiddleware } from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../auth/jwt.service.js";
 
 export const createPaymentRoutes = (
   controller: PaymentController,

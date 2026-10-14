@@ -1,9 +1,9 @@
-import { VoucherRepository } from "../../../domain/repositories/voucher.repository";
-import { UpdateVoucherDTO, VoucherResponse } from "../../dtos/voucher.dto";
+import { VoucherRepository } from "../../../domain/repositories/voucher.repository.js";
+import { UpdateVoucherDTO, VoucherResponse } from "../../dtos/voucher.dto.js";
 import {
   NotFoundError,
   ConflictError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 export class UpdateVoucherUseCase {
   constructor(private readonly voucherRepository: VoucherRepository) {}

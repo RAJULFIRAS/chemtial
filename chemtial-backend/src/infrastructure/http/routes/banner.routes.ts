@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { BannerController } from "../controllers/banner.controller";
+import { BannerController } from "../controllers/banner.controller.js";
 import {
   authMiddleware,
   adminMiddleware,
-} from "../middlewares/auth.middleware";
-import { JwtService } from "../../auth/jwt.service";
+} from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../auth/jwt.service.js";
 
 export const createBannerRoutes = (
   controller: BannerController,

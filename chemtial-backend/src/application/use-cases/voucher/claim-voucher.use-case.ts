@@ -1,11 +1,11 @@
-import { VoucherRepository } from "../../../domain/repositories/voucher.repository";
-import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository";
-import { OrderRepository } from "../../../domain/repositories/order.repository";
+import { VoucherRepository } from "../../../domain/repositories/voucher.repository.js";
+import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository.js";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
 import {
   NotFoundError,
   ValidationError,
   ConflictError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 export interface ClaimVoucherResponse {
   usageId: string;

@@ -1,13 +1,13 @@
 import { Request, Response, NextFunction } from "express";
-import { GetBannersUseCase } from "../../../application/use-cases/banner/get-banners.use-case";
-import { GetBannerByIdUseCase } from "../../../application/use-cases/banner/get-banner-by-id.use-case";
-import { CreateBannerUseCase } from "../../../application/use-cases/banner/create-banner.use-case";
-import { UpdateBannerUseCase } from "../../../application/use-cases/banner/update-banner.use-case";
-import { DeleteBannerUseCase } from "../../../application/use-cases/banner/delete-banner.use-case";
+import { GetBannersUseCase } from "../../../application/use-cases/banner/get-banners.use-case.js";
+import { GetBannerByIdUseCase } from "../../../application/use-cases/banner/get-banner-by-id.use-case.js";
+import { CreateBannerUseCase } from "../../../application/use-cases/banner/create-banner.use-case.js";
+import { UpdateBannerUseCase } from "../../../application/use-cases/banner/update-banner.use-case.js";
+import { DeleteBannerUseCase } from "../../../application/use-cases/banner/delete-banner.use-case.js";
 import {
   createBannerSchema,
   updateBannerSchema,
-} from "../../../application/dtos/banner.dto";
+} from "../../../application/dtos/banner.dto.js";
 
 export class BannerController {
   constructor(

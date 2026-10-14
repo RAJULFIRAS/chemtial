@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from "express";
-import { GetUsersUseCase } from "../../../application/use-cases/user/get-users.use-case";
-import { UpdateUserRoleUseCase } from "../../../application/use-cases/user/update-user-role.use-case";
-import { DeleteUserUseCase } from "../../../application/use-cases/user/delete-user.use-case";
+import { GetUsersUseCase } from "../../../application/use-cases/user/get-users.use-case.js";
+import { UpdateUserRoleUseCase } from "../../../application/use-cases/user/update-user-role.use-case.js";
+import { DeleteUserUseCase } from "../../../application/use-cases/user/delete-user.use-case.js";
 import {
   userQuerySchema,
   updateUserRoleSchema,
-} from "../../../application/dtos/user.dto";
+} from "../../../application/dtos/user.dto.js";
 
 export class UserController {
   constructor(

@@ -1,5 +1,5 @@
-import { BannerRepository } from "../../../domain/repositories/banner.repository";
-import { CreateBannerDTO, BannerResponse } from "../../dtos/banner.dto";
+import { BannerRepository } from "../../../domain/repositories/banner.repository.js";
+import { CreateBannerDTO, BannerResponse } from "../../dtos/banner.dto.js";
 
 export class CreateBannerUseCase {
   constructor(private readonly bannerRepository: BannerRepository) {}

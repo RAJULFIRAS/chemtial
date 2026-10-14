@@ -1,6 +1,6 @@
 import Stripe from "stripe";
-import { UpdateOrderStatusUseCase } from "../../application/use-cases/order/update-order-status.use-case";
-import { OrderRepository } from "../../domain/repositories/order.repository";
+import { UpdateOrderStatusUseCase } from "../../application/use-cases/order/update-order-status.use-case.js";
+import { OrderRepository } from "../../domain/repositories/order.repository.js";
 
 export class StripeService {
   private stripe: Stripe;

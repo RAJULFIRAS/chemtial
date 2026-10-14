@@ -1,10 +1,10 @@
-import { UserRepository } from "../../../domain/repositories/user.repository";
+import { UserRepository } from "../../../domain/repositories/user.repository.js";
 import {
   NotFoundError,
   ValidationError,
   ForbiddenError,
-} from "../../../shared/exceptions/app.error";
-import { ROLES, ALL_ROLES } from "../../../shared/constants/roles";
+} from "../../../shared/exceptions/app.error.js";
+import { ROLES, ALL_ROLES } from "../../../shared/constants/roles.js";
 
 export class UpdateUserRoleUseCase {
   constructor(private readonly userRepository: UserRepository) {}

@@ -1,14 +1,14 @@
 import { Request, Response, NextFunction } from "express";
-import { GetCategoriesUseCase } from "../../../application/use-cases/category/get-categories.use-case";
-import { GetCategoryByIdUseCase } from "../../../application/use-cases/category/get-category-by-id.use-case";
-import { GetCategoryBySlugUseCase } from "../../../application/use-cases/category/get-category-by-slug.use-case";
-import { CreateCategoryUseCase } from "../../../application/use-cases/category/create-category.use-case";
-import { UpdateCategoryUseCase } from "../../../application/use-cases/category/update-category.use-case";
-import { DeleteCategoryUseCase } from "../../../application/use-cases/category/delete-category.use-case";
+import { GetCategoriesUseCase } from "../../../application/use-cases/category/get-categories.use-case.js";
+import { GetCategoryByIdUseCase } from "../../../application/use-cases/category/get-category-by-id.use-case.js";
+import { GetCategoryBySlugUseCase } from "../../../application/use-cases/category/get-category-by-slug.use-case.js";
+import { CreateCategoryUseCase } from "../../../application/use-cases/category/create-category.use-case.js";
+import { UpdateCategoryUseCase } from "../../../application/use-cases/category/update-category.use-case.js";
+import { DeleteCategoryUseCase } from "../../../application/use-cases/category/delete-category.use-case.js";
 import {
   createCategorySchema,
   updateCategorySchema,
-} from "../../../application/dtos/category.dto";
+} from "../../../application/dtos/category.dto.js";
 
 export class CategoryController {
   constructor(

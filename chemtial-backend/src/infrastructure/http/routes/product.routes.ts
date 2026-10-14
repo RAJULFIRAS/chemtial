@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { ProductController } from "../controllers/product.controller";
+import { ProductController } from "../controllers/product.controller.js";
 import {
   authMiddleware,
   adminMiddleware,
-} from "../middlewares/auth.middleware";
-import { JwtService } from "../../../infrastructure/auth/jwt.service";
-import { searchLimiter } from "../middlewares/rate-limit.middleware";
+} from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../../infrastructure/auth/jwt.service.js";
+import { searchLimiter } from "../middlewares/rate-limit.middleware.js";
 
 export const createProductRoutes = (
   controller: ProductController,

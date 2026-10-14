@@ -1,6 +1,6 @@
 import { Voucher } from "@prisma/client";
-import { prisma } from "../prisma/client";
-import { VoucherRepository } from "../../../domain/repositories/voucher.repository";
+import { prisma } from "../prisma/client.js";
+import { VoucherRepository } from "../../../domain/repositories/voucher.repository.js";
 
 export class PrismaVoucherRepository implements VoucherRepository {
   async findById(id: string): Promise<Voucher | null> {

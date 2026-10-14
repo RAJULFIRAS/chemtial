@@ -1,5 +1,5 @@
-import { VoucherRepository } from "../../../domain/repositories/voucher.repository";
-import { VoucherResponse } from "../../dtos/voucher.dto";
+import { VoucherRepository } from "../../../domain/repositories/voucher.repository.js";
+import { VoucherResponse } from "../../dtos/voucher.dto.js";
 
 export class GetVouchersUseCase {
   constructor(private readonly voucherRepository: VoucherRepository) {}

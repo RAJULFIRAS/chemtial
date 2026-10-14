@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from "express";
-import { JwtService } from "../../auth/jwt.service";
-import { PrismaUserRepository } from "../../database/repositories/prisma-user.repository";
+import { JwtService } from "../../auth/jwt.service.js";
+import { PrismaUserRepository } from "../../database/repositories/prisma-user.repository.js";
 import {
   UnauthorizedError,
   ForbiddenError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 const userRepository = new PrismaUserRepository();
 

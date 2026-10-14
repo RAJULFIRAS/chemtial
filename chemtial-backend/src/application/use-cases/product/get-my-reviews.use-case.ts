@@ -1,5 +1,5 @@
-import { ProductReviewRepository } from "../../../domain/repositories/product-review.repository";
-import { ProductReviewResponse } from "../../dtos/product-review.dto";
+import { ProductReviewRepository } from "../../../domain/repositories/product-review.repository.js";
+import { ProductReviewResponse } from "../../dtos/product-review.dto.js";
 
 export class GetMyReviewsUseCase {
   constructor(

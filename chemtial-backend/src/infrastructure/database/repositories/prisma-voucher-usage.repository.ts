@@ -1,8 +1,8 @@
-import { prisma } from "../prisma/client";
+import { prisma } from "../prisma/client.js";
 import {
   VoucherUsageEntry,
   VoucherUsageRepository,
-} from "../../../domain/repositories/voucher-usage.repository";
+} from "../../../domain/repositories/voucher-usage.repository.js";
 
 export class PrismaVoucherUsageRepository implements VoucherUsageRepository {
   async claim(voucherId: string, userId: string): Promise<VoucherUsageEntry> {

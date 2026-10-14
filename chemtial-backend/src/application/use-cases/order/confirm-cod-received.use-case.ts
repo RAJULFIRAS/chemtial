@@ -1,10 +1,10 @@
-import { OrderRepository } from "../../../domain/repositories/order.repository";
-import { UpdateOrderStatusUseCase } from "./update-order-status.use-case";
-import { Order } from "../../../domain/entities/order.entity";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
+import { UpdateOrderStatusUseCase } from "./update-order-status.use-case.js";
+import { Order } from "../../../domain/entities/order.entity.js";
 import {
   NotFoundError,
   ValidationError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 export class ConfirmCodReceivedUseCase {
   constructor(

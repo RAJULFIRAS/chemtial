@@ -1,6 +1,6 @@
-import { CategoryRepository } from "../../../domain/repositories/category.repository";
-import { CategoryResponse } from "../../dtos/category.dto";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { CategoryRepository } from "../../../domain/repositories/category.repository.js";
+import { CategoryResponse } from "../../dtos/category.dto.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class GetCategoryBySlugUseCase {
   constructor(private readonly categoryRepository: CategoryRepository) {}

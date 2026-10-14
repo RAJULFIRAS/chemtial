@@ -1,5 +1,5 @@
 import rateLimit from "express-rate-limit";
-import { config } from "../../../config/env.validation";
+import { config } from "../../../config/env.validation.js";
 import { Request } from "express";
 
 const userKeyGenerator = (req: Request): string => {

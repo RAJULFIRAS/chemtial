@@ -2,8 +2,8 @@ import { Request, Response, NextFunction } from "express";
 import { put } from "@vercel/blob";
 import path from "path";
 import crypto from "crypto";
-import { ValidationError } from "../../../shared/exceptions/app.error";
-import { logger } from "../../../shared/utils/logger";
+import { ValidationError } from "../../../shared/exceptions/app.error.js";
+import { logger } from "../../../shared/utils/logger.js";
 
 type UploadFolder =
   | "products"

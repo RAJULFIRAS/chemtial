@@ -1,5 +1,5 @@
 import multer from "multer";
-import { ValidationError } from "../../../shared/exceptions/app.error";
+import { ValidationError } from "../../../shared/exceptions/app.error.js";
 
 const ALLOWED_IMAGE_TYPES = [
   "image/jpeg",

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { UploadController } from "../controllers/upload.controller";
-import { uploadLimiter } from "../middlewares/rate-limit.middleware";
+import { UploadController } from "../controllers/upload.controller.js";
+import { uploadLimiter } from "../middlewares/rate-limit.middleware.js";
 import {
   uploadProductImage,
   uploadBrandLogo,
@@ -8,12 +8,12 @@ import {
   uploadPromoImage,
   uploadBannerFile,
   uploadSingle,
-} from "../middlewares/upload.middleware";
+} from "../middlewares/upload.middleware.js";
 import {
   authMiddleware,
   adminMiddleware,
-} from "../middlewares/auth.middleware";
-import { JwtService } from "../../auth/jwt.service";
+} from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../auth/jwt.service.js";
 
 export const createUploadRoutes = (
   controller: UploadController,

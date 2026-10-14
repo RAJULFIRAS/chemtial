@@ -1,4 +1,4 @@
-import { Product } from "../entities/product.entity";
+import { Product } from "../entities/product.entity.js";
 
 export interface ProductRepository {
   findById(id: string): Promise<Product | null>;

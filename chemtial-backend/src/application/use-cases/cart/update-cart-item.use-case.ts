@@ -1,5 +1,5 @@
-import { CartRepository } from "../../../domain/repositories/cart.repository";
-import { Cart } from "../../../domain/entities/cart.entity";
+import { CartRepository } from "../../../domain/repositories/cart.repository.js";
+import { Cart } from "../../../domain/entities/cart.entity.js";
 
 export class UpdateCartItemUseCase {
   constructor(private readonly cartRepository: CartRepository) {}

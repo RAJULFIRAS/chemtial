@@ -1,9 +1,9 @@
-import { PromoRepository } from "../../../domain/repositories/promo.repository";
-import { CreatePromoDTO, PromoResponse } from "../../dtos/promo.dto";
+import { PromoRepository } from "../../../domain/repositories/promo.repository.js";
+import { CreatePromoDTO, PromoResponse } from "../../dtos/promo.dto.js";
 import {
   ConflictError,
   ValidationError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 export class CreatePromoUseCase {
   constructor(private readonly promoRepository: PromoRepository) {}

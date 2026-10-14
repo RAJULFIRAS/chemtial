@@ -1,9 +1,9 @@
-import { PromoRepository } from "../../../domain/repositories/promo.repository";
-import { UpdatePromoDTO, PromoResponse } from "../../dtos/promo.dto";
+import { PromoRepository } from "../../../domain/repositories/promo.repository.js";
+import { UpdatePromoDTO, PromoResponse } from "../../dtos/promo.dto.js";
 import {
   NotFoundError,
   ConflictError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 export class UpdatePromoUseCase {
   constructor(private readonly promoRepository: PromoRepository) {}

@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from "express";
-import { GetProductsUseCase } from "../../../application/use-cases/product/get-products.use-case";
-import { GetProductByIdUseCase } from "../../../application/use-cases/product/get-product-by-id.use-case";
-import { CreateProductUseCase } from "../../../application/use-cases/product/create-product.use-case";
-import { productQuerySchema } from "../../../application/dtos/product.dto";
-import { CreateProductDTO } from "../../../application/dtos/product.dto";
-import { UpdateProductUseCase } from "../../../application/use-cases/product/update-product.use-case";
-import { DeleteProductUseCase } from "../../../application/use-cases/product/delete-product.use-case";
+import { GetProductsUseCase } from "../../../application/use-cases/product/get-products.use-case.js";
+import { GetProductByIdUseCase } from "../../../application/use-cases/product/get-product-by-id.use-case.js";
+import { CreateProductUseCase } from "../../../application/use-cases/product/create-product.use-case.js";
+import { productQuerySchema } from "../../../application/dtos/product.dto.js";
+import { CreateProductDTO } from "../../../application/dtos/product.dto.js";
+import { UpdateProductUseCase } from "../../../application/use-cases/product/update-product.use-case.js";
+import { DeleteProductUseCase } from "../../../application/use-cases/product/delete-product.use-case.js";
 
 export class ProductController {
   constructor(

@@ -1,6 +1,6 @@
-import { VoucherRepository } from "../../../domain/repositories/voucher.repository";
-import { VoucherResponse } from "../../dtos/voucher.dto";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { VoucherRepository } from "../../../domain/repositories/voucher.repository.js";
+import { VoucherResponse } from "../../dtos/voucher.dto.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class GetVoucherByIdUseCase {
   constructor(private readonly voucherRepository: VoucherRepository) {}

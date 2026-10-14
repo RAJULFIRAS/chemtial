@@ -1,16 +1,16 @@
-import { ProductReviewRepository } from "../../../domain/repositories/product-review.repository";
-import { OrderRepository } from "../../../domain/repositories/order.repository";
+import { ProductReviewRepository } from "../../../domain/repositories/product-review.repository.js";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
 import {
   CreateProductReviewDTO,
   ProductReviewResponse,
-} from "../../dtos/product-review.dto";
+} from "../../dtos/product-review.dto.js";
 import {
   NotFoundError,
   ValidationError,
   ForbiddenError,
   ConflictError,
-} from "../../../shared/exceptions/app.error";
-import { prisma } from "../../../infrastructure/database/prisma/client";
+} from "../../../shared/exceptions/app.error.js";
+import { prisma } from "../../../infrastructure/database/prisma/client.js";
 
 export class CreateProductReviewUseCase {
   constructor(

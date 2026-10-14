@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-import { CreateProductReviewUseCase } from "../../../application/use-cases/product/create-product-review.use-case";
-import { GetProductReviewsUseCase } from "../../../application/use-cases/product/get-product-reviews.use-case";
-import { createProductReviewSchema } from "../../../application/dtos/product-review.dto";
-import { UnauthorizedError } from "../../../shared/exceptions/app.error";
-import { GetMyReviewsUseCase } from "../../../application/use-cases/product/get-my-reviews.use-case";
+import { CreateProductReviewUseCase } from "../../../application/use-cases/product/create-product-review.use-case.js";
+import { GetProductReviewsUseCase } from "../../../application/use-cases/product/get-product-reviews.use-case.js";
+import { createProductReviewSchema } from "../../../application/dtos/product-review.dto.js";
+import { UnauthorizedError } from "../../../shared/exceptions/app.error.js";
+import { GetMyReviewsUseCase } from "../../../application/use-cases/product/get-my-reviews.use-case.js";
 
 export class ProductReviewController {
   constructor(

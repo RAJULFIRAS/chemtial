@@ -1,9 +1,9 @@
-import { UserRepository } from "../../../domain/repositories/user.repository";
+import { UserRepository } from "../../../domain/repositories/user.repository.js";
 import {
   NotFoundError,
   ForbiddenError,
-} from "../../../shared/exceptions/app.error";
-import { ROLES } from "../../../shared/constants/roles";
+} from "../../../shared/exceptions/app.error.js";
+import { ROLES } from "../../../shared/constants/roles.js";
 
 export class DeleteUserUseCase {
   constructor(private readonly userRepository: UserRepository) {}

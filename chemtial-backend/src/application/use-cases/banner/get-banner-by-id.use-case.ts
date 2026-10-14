@@ -1,6 +1,6 @@
-import { BannerRepository } from "../../../domain/repositories/banner.repository";
-import { BannerResponse } from "../../dtos/banner.dto";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { BannerRepository } from "../../../domain/repositories/banner.repository.js";
+import { BannerResponse } from "../../dtos/banner.dto.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class GetBannerByIdUseCase {
   constructor(private readonly bannerRepository: BannerRepository) {}

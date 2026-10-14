@@ -1,9 +1,9 @@
-import { prisma } from "../prisma/client";
-import { DownloadRepository } from "../../../domain/repositories/download.repository";
+import { prisma } from "../prisma/client.js";
+import { DownloadRepository } from "../../../domain/repositories/download.repository.js";
 import {
   DownloadAnalytics,
   DailyDownloadStats,
-} from "../../../application/use-cases/download/get-download-analytics.use-case";
+} from "../../../application/use-cases/download/get-download-analytics.use-case.js";
 
 export class PrismaDownloadRepository implements DownloadRepository {
   async track(data: {

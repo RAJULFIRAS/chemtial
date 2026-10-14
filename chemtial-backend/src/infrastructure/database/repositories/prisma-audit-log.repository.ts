@@ -1,5 +1,5 @@
-import { prisma } from "../prisma/client";
-import { AuditLogRepository } from "../../../domain/repositories/audit-log.repository";
+import { prisma } from "../prisma/client.js";
+import { AuditLogRepository } from "../../../domain/repositories/audit-log.repository.js";
 
 export class PrismaAuditLogRepository implements AuditLogRepository {
   async create(data: {

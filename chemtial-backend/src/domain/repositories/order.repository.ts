@@ -1,9 +1,9 @@
-import { Order } from "../entities/order.entity";
-import { CreateOrderDTO } from "../../application/dtos/order.dto";
+import { Order } from "../entities/order.entity.js";
+import { CreateOrderDTO } from "../../application/dtos/order.dto.js";
 import {
   RevenueReport,
   RevenueRange,
-} from "../../application/use-cases/order/get-revenue-report.use-case";
+} from "../../application/use-cases/order/get-revenue-report.use-case.js";
 
 export interface OrderRepository {
   findById(id: string): Promise<Order | null>;

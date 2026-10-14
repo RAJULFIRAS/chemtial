@@ -1,8 +1,8 @@
-import { UserRepository } from "../../../domain/repositories/user.repository";
-import { PasswordService } from "../../../infrastructure/auth/password.service";
-import { JwtService } from "../../../infrastructure/auth/jwt.service";
-import { LoginDTO, AuthResponse } from "../../dtos/auth.dto";
-import { UnauthorizedError } from "../../../shared/exceptions/app.error";
+import { UserRepository } from "../../../domain/repositories/user.repository.js";
+import { PasswordService } from "../../../infrastructure/auth/password.service.js";
+import { JwtService } from "../../../infrastructure/auth/jwt.service.js";
+import { LoginDTO, AuthResponse } from "../../dtos/auth.dto.js";
+import { UnauthorizedError } from "../../../shared/exceptions/app.error.js";
 
 export class LoginUseCase {
   constructor(

@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { config } from "../../config/env.validation";
+import { config } from "../../config/env.validation.js";
 
 interface TokenPayload {
   id: string;

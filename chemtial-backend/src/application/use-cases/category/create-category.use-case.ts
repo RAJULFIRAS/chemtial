@@ -1,6 +1,6 @@
-import { CategoryRepository } from "../../../domain/repositories/category.repository";
-import { CreateCategoryDTO, CategoryResponse } from "../../dtos/category.dto";
-import { ConflictError } from "../../../shared/exceptions/app.error";
+import { CategoryRepository } from "../../../domain/repositories/category.repository.js";
+import { CreateCategoryDTO, CategoryResponse } from "../../dtos/category.dto.js";
+import { ConflictError } from "../../../shared/exceptions/app.error.js";
 
 export class CreateCategoryUseCase {
   constructor(private readonly categoryRepository: CategoryRepository) {}

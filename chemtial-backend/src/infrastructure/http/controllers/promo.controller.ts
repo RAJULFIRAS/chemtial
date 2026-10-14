@@ -1,13 +1,13 @@
 import { Request, Response, NextFunction } from "express";
-import { GetPromosUseCase } from "../../../application/use-cases/promo/get-promos.use-case";
-import { GetPromoByIdUseCase } from "../../../application/use-cases/promo/get-promo-by-id.use-case";
-import { CreatePromoUseCase } from "../../../application/use-cases/promo/create-promo.use-case";
-import { UpdatePromoUseCase } from "../../../application/use-cases/promo/update-promo.use-case";
-import { DeletePromoUseCase } from "../../../application/use-cases/promo/delete-promo.use-case";
+import { GetPromosUseCase } from "../../../application/use-cases/promo/get-promos.use-case.js";
+import { GetPromoByIdUseCase } from "../../../application/use-cases/promo/get-promo-by-id.use-case.js";
+import { CreatePromoUseCase } from "../../../application/use-cases/promo/create-promo.use-case.js";
+import { UpdatePromoUseCase } from "../../../application/use-cases/promo/update-promo.use-case.js";
+import { DeletePromoUseCase } from "../../../application/use-cases/promo/delete-promo.use-case.js";
 import {
   createPromoSchema,
   updatePromoSchema,
-} from "../../../application/dtos/promo.dto";
+} from "../../../application/dtos/promo.dto.js";
 
 export class PromoController {
   constructor(

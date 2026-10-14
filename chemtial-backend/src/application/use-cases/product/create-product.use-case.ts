@@ -1,7 +1,7 @@
-import { Product } from "../../../domain/entities/product.entity";
-import { ProductRepository } from "../../../domain/repositories/product.repository";
-import { CreateProductDTO, ProductResponse } from "../../dtos/product.dto";
-import { ProductMapper } from "../../mappers/product.mapper";
+import { Product } from "../../../domain/entities/product.entity.js";
+import { ProductRepository } from "../../../domain/repositories/product.repository.js";
+import { CreateProductDTO, ProductResponse } from "../../dtos/product.dto.js";
+import { ProductMapper } from "../../mappers/product.mapper.js";
 
 export class CreateProductUseCase {
   constructor(private readonly productRepository: ProductRepository) {}

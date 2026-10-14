@@ -1,5 +1,5 @@
-import { Product } from "../../domain/entities/product.entity";
-import { ProductResponse } from "../dtos/product.dto";
+import { Product } from "../../domain/entities/product.entity.js";
+import { ProductResponse } from "../dtos/product.dto.js";
 
 export class ProductMapper {
   static toResponse(product: Product): ProductResponse {

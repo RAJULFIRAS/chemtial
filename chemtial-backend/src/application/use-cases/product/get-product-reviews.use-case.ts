@@ -1,8 +1,8 @@
-import { ProductReviewRepository } from "../../../domain/repositories/product-review.repository";
+import { ProductReviewRepository } from "../../../domain/repositories/product-review.repository.js";
 import {
   ProductReviewResponse,
   ProductRatingSummary,
-} from "../../dtos/product-review.dto";
+} from "../../dtos/product-review.dto.js";
 
 export interface ProductReviewsResult {
   reviews: ProductReviewResponse[];

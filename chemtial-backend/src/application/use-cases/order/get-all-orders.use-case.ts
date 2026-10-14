@@ -1,4 +1,4 @@
-import { OrderRepository } from "../../../domain/repositories/order.repository";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
 
 export class GetAllOrdersUseCase {
   constructor(private readonly orderRepository: OrderRepository) {}

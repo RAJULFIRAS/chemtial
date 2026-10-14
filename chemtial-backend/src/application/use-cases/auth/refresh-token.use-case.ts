@@ -1,7 +1,7 @@
-import { UserRepository } from "../../../domain/repositories/user.repository";
-import { JwtService } from "../../../infrastructure/auth/jwt.service";
-import { RefreshTokenDTO, AuthResponse } from "../../dtos/auth.dto";
-import { UnauthorizedError } from "../../../shared/exceptions/app.error";
+import { UserRepository } from "../../../domain/repositories/user.repository.js";
+import { JwtService } from "../../../infrastructure/auth/jwt.service.js";
+import { RefreshTokenDTO, AuthResponse } from "../../dtos/auth.dto.js";
+import { UnauthorizedError } from "../../../shared/exceptions/app.error.js";
 
 export class RefreshTokenUseCase {
   constructor(

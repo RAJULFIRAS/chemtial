@@ -1,5 +1,5 @@
-import { VoucherRepository } from "../../../domain/repositories/voucher.repository";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { VoucherRepository } from "../../../domain/repositories/voucher.repository.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class DeleteVoucherUseCase {
   constructor(private readonly voucherRepository: VoucherRepository) {}

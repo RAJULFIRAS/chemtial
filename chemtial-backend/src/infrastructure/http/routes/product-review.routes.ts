@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { ProductReviewController } from "../controllers/product-review.controller";
-import { authMiddleware } from "../middlewares/auth.middleware";
-import { JwtService } from "../../auth/jwt.service";
+import { ProductReviewController } from "../controllers/product-review.controller.js";
+import { authMiddleware } from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../auth/jwt.service.js";
 
 export const createProductReviewRoutes = (
   controller: ProductReviewController,

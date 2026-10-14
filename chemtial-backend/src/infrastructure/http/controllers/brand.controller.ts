@@ -1,13 +1,13 @@
 import { Request, Response, NextFunction } from "express";
-import { GetBrandsUseCase } from "../../../application/use-cases/brand/get-brands.use-case";
-import { GetBrandByIdUseCase } from "../../../application/use-cases/brand/get-brand-by-id.use-case";
-import { CreateBrandUseCase } from "../../../application/use-cases/brand/create-brand.use-case";
-import { UpdateBrandUseCase } from "../../../application/use-cases/brand/update-brand.use-case";
-import { DeleteBrandUseCase } from "../../../application/use-cases/brand/delete-brand.use-case";
+import { GetBrandsUseCase } from "../../../application/use-cases/brand/get-brands.use-case.js";
+import { GetBrandByIdUseCase } from "../../../application/use-cases/brand/get-brand-by-id.use-case.js";
+import { CreateBrandUseCase } from "../../../application/use-cases/brand/create-brand.use-case.js";
+import { UpdateBrandUseCase } from "../../../application/use-cases/brand/update-brand.use-case.js";
+import { DeleteBrandUseCase } from "../../../application/use-cases/brand/delete-brand.use-case.js";
 import {
   createBrandSchema,
   updateBrandSchema,
-} from "../../../application/dtos/brand.dto";
+} from "../../../application/dtos/brand.dto.js";
 
 export class BrandController {
   constructor(

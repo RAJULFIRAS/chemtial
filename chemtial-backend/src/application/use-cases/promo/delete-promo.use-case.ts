@@ -1,5 +1,5 @@
-import { PromoRepository } from "../../../domain/repositories/promo.repository";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { PromoRepository } from "../../../domain/repositories/promo.repository.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class DeletePromoUseCase {
   constructor(private readonly promoRepository: PromoRepository) {}

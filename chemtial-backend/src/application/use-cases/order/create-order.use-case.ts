@@ -1,14 +1,14 @@
-import { OrderRepository } from "../../../domain/repositories/order.repository";
-import { CartRepository } from "../../../domain/repositories/cart.repository";
-import { ProductRepository } from "../../../domain/repositories/product.repository";
-import { OrderStatusHistoryRepository } from "../../../domain/repositories/order-status-history.repository";
-import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository";
-import { VoucherRepository } from "../../../domain/repositories/voucher.repository";
-import { ValidateVoucherUseCase } from "../voucher/validate-voucher.use-case";
-import { CreateOrderDTO } from "../../dtos/order.dto";
-import { Order } from "../../../domain/entities/order.entity";
-import { ValidationError } from "../../../shared/exceptions/app.error";
-import { config } from "../../../config/env.validation";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
+import { CartRepository } from "../../../domain/repositories/cart.repository.js";
+import { ProductRepository } from "../../../domain/repositories/product.repository.js";
+import { OrderStatusHistoryRepository } from "../../../domain/repositories/order-status-history.repository.js";
+import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository.js";
+import { VoucherRepository } from "../../../domain/repositories/voucher.repository.js";
+import { ValidateVoucherUseCase } from "../voucher/validate-voucher.use-case.js";
+import { CreateOrderDTO } from "../../dtos/order.dto.js";
+import { Order } from "../../../domain/entities/order.entity.js";
+import { ValidationError } from "../../../shared/exceptions/app.error.js";
+import { config } from "../../../config/env.validation.js";
 
 const roundMoney = (n: number): number => Math.round(n * 100) / 100;
 

@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from "express";
-import { GetCartUseCase } from "../../../application/use-cases/cart/get-cart.use-case";
-import { AddToCartUseCase } from "../../../application/use-cases/cart/add-to-cart.use-case";
-import { UpdateCartItemUseCase } from "../../../application/use-cases/cart/update-cart-item.use-case";
-import { RemoveCartItemUseCase } from "../../../application/use-cases/cart/remove-cart-item.use-case";
+import { GetCartUseCase } from "../../../application/use-cases/cart/get-cart.use-case.js";
+import { AddToCartUseCase } from "../../../application/use-cases/cart/add-to-cart.use-case.js";
+import { UpdateCartItemUseCase } from "../../../application/use-cases/cart/update-cart-item.use-case.js";
+import { RemoveCartItemUseCase } from "../../../application/use-cases/cart/remove-cart-item.use-case.js";
 import {
   addToCartSchema,
   updateCartItemSchema,
-} from "../../../application/dtos/cart.dto";
+} from "../../../application/dtos/cart.dto.js";
 
 export class CartController {
   constructor(

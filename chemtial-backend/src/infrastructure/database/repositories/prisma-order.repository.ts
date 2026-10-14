@@ -1,15 +1,15 @@
-import { prisma } from "../prisma/client";
+import { prisma } from "../prisma/client.js";
 import {
   Order,
   OrderItem,
   OrderStatus,
-} from "../../../domain/entities/order.entity";
-import { OrderRepository } from "../../../domain/repositories/order.repository";
-import { CreateOrderDTO } from "../../../application/dtos/order.dto";
+} from "../../../domain/entities/order.entity.js";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
+import { CreateOrderDTO } from "../../../application/dtos/order.dto.js";
 import {
   RevenueReport,
   RevenueRange,
-} from "../../../application/use-cases/order/get-revenue-report.use-case";
+} from "../../../application/use-cases/order/get-revenue-report.use-case.js";
 
 export class PrismaOrderRepository implements OrderRepository {
   async findById(id: string): Promise<Order | null> {

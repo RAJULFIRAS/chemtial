@@ -1,5 +1,5 @@
-import { BannerRepository } from "../../../domain/repositories/banner.repository";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { BannerRepository } from "../../../domain/repositories/banner.repository.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class DeleteBannerUseCase {
   constructor(private readonly bannerRepository: BannerRepository) {}

@@ -1,7 +1,7 @@
-import { UserRepository } from "../../../domain/repositories/user.repository";
-import { PasswordService } from "../../../infrastructure/auth/password.service";
-import { ResetPasswordDTO } from "../../dtos/password-reset.dto";
-import { ValidationError } from "../../../shared/exceptions/app.error";
+import { UserRepository } from "../../../domain/repositories/user.repository.js";
+import { PasswordService } from "../../../infrastructure/auth/password.service.js";
+import { ResetPasswordDTO } from "../../dtos/password-reset.dto.js";
+import { ValidationError } from "../../../shared/exceptions/app.error.js";
 
 export class ResetPasswordUseCase {
   constructor(

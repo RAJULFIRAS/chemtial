@@ -1,6 +1,6 @@
 import { Category } from "@prisma/client";
-import { prisma } from "../prisma/client";
-import { CategoryRepository } from "../../../domain/repositories/category.repository";
+import { prisma } from "../prisma/client.js";
+import { CategoryRepository } from "../../../domain/repositories/category.repository.js";
 
 export class PrismaCategoryRepository implements CategoryRepository {
   async findById(id: string): Promise<Category | null> {

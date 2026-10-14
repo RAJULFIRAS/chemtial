@@ -1,5 +1,5 @@
-import { BrandRepository } from "../../../domain/repositories/brand.repository";
-import { BrandResponse } from "../../dtos/brand.dto";
+import { BrandRepository } from "../../../domain/repositories/brand.repository.js";
+import { BrandResponse } from "../../dtos/brand.dto.js";
 
 export class GetBrandsUseCase {
   constructor(private readonly brandRepository: BrandRepository) {}

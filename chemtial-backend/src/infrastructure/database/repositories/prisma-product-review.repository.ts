@@ -1,8 +1,8 @@
-import { prisma } from "../prisma/client";
+import { prisma } from "../prisma/client.js";
 import {
   ProductReviewEntry,
   ProductReviewRepository,
-} from "../../../domain/repositories/product-review.repository";
+} from "../../../domain/repositories/product-review.repository.js";
 
 export class PrismaProductReviewRepository implements ProductReviewRepository {
   async findById(id: string): Promise<ProductReviewEntry | null> {

@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { VoucherController } from "../controllers/voucher.controller";
+import { VoucherController } from "../controllers/voucher.controller.js";
 import {
   authMiddleware,
   adminMiddleware,
-} from "../middlewares/auth.middleware";
-import { JwtService } from "../../auth/jwt.service";
-import { voucherClaimLimiter } from "../middlewares/rate-limit.middleware";
+} from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../auth/jwt.service.js";
+import { voucherClaimLimiter } from "../middlewares/rate-limit.middleware.js";
 
 export const createVoucherRoutes = (
   controller: VoucherController,

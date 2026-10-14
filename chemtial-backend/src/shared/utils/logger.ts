@@ -1,5 +1,5 @@
 import pino from "pino";
-import { config } from "../../config/env.validation";
+import { config } from "../../config/env.validation.js";
 
 export const logger = pino({
   level: config.LOG_LEVEL,

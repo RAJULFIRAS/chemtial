@@ -1,9 +1,9 @@
-import { BrandRepository } from "../../../domain/repositories/brand.repository";
-import { UpdateBrandDTO, BrandResponse } from "../../dtos/brand.dto";
+import { BrandRepository } from "../../../domain/repositories/brand.repository.js";
+import { UpdateBrandDTO, BrandResponse } from "../../dtos/brand.dto.js";
 import {
   NotFoundError,
   ConflictError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 export class UpdateBrandUseCase {
   constructor(private readonly brandRepository: BrandRepository) {}

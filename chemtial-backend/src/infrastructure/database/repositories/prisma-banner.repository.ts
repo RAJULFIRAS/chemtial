@@ -1,6 +1,6 @@
 import { Banner } from "@prisma/client";
-import { prisma } from "../prisma/client";
-import { BannerRepository } from "../../../domain/repositories/banner.repository";
+import { prisma } from "../prisma/client.js";
+import { BannerRepository } from "../../../domain/repositories/banner.repository.js";
 
 export class PrismaBannerRepository implements BannerRepository {
   async findById(id: string): Promise<Banner | null> {

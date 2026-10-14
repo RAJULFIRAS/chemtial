@@ -1,4 +1,4 @@
-import { Product } from "./product.entity";
+import { Product } from "./product.entity.js";
 
 export interface CartItem {
   id: string;

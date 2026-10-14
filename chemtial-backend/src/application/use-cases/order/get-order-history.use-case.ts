@@ -1,6 +1,6 @@
-import { OrderRepository } from "../../../domain/repositories/order.repository";
-import { OrderStatusHistoryRepository } from "../../../domain/repositories/order-status-history.repository";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
+import { OrderStatusHistoryRepository } from "../../../domain/repositories/order-status-history.repository.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export interface OrderHistoryEntryResponse {
   id: string;

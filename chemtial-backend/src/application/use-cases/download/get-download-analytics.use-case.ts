@@ -1,4 +1,4 @@
-import { DownloadRepository } from "../../../domain/repositories/download.repository";
+import { DownloadRepository } from "../../../domain/repositories/download.repository.js";
 
 export interface DailyDownloadStats {
   date: string;

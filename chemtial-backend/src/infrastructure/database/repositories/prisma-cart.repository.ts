@@ -1,9 +1,9 @@
-import { prisma } from "../prisma/client";
-import { Cart, CartItem } from "../../../domain/entities/cart.entity";
-import { CartRepository } from "../../../domain/repositories/cart.repository";
-import { AddToCartDTO } from "../../../application/dtos/cart.dto";
-import { ValidationError } from "../../../shared/exceptions/app.error";
-import { ProductMapper } from "../../../application/mappers/product.mapper";
+import { prisma } from "../prisma/client.js";
+import { Cart, CartItem } from "../../../domain/entities/cart.entity.js";
+import { CartRepository } from "../../../domain/repositories/cart.repository.js";
+import { AddToCartDTO } from "../../../application/dtos/cart.dto.js";
+import { ValidationError } from "../../../shared/exceptions/app.error.js";
+import { ProductMapper } from "../../../application/mappers/product.mapper.js";
 
 export class PrismaCartRepository implements CartRepository {
   async findByUserId(userId: string): Promise<Cart | null> {

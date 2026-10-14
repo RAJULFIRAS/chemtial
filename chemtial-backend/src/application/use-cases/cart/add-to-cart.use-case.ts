@@ -1,6 +1,6 @@
-import { CartRepository } from "../../../domain/repositories/cart.repository";
-import { AddToCartDTO } from "../../dtos/cart.dto";
-import { Cart } from "../../../domain/entities/cart.entity";
+import { CartRepository } from "../../../domain/repositories/cart.repository.js";
+import { AddToCartDTO } from "../../dtos/cart.dto.js";
+import { Cart } from "../../../domain/entities/cart.entity.js";
 
 export class AddToCartUseCase {
   constructor(private readonly cartRepository: CartRepository) {}

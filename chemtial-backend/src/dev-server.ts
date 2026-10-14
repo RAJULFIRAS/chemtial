@@ -1,8 +1,8 @@
-import "./config/load-env";
-import { app } from "./server";
-import { config } from "./config/env.validation";
-import { logger } from "./shared/utils/logger";
-import { prisma } from "./infrastructure/database/prisma/client";
+import "./config/load-env.js";
+import { app } from "./server.js";
+import { config } from "./config/env.validation.js";
+import { logger } from "./shared/utils/logger.js";
+import { prisma } from "./infrastructure/database/prisma/client.js";
 
 const PORT = config.PORT;
 

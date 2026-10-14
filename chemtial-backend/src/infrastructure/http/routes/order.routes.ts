@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { OrderController } from "../controllers/order.controller";
+import { OrderController } from "../controllers/order.controller.js";
 import {
   authMiddleware,
   adminMiddleware,
   managerOnly,
   courierMiddleware,
-} from "../middlewares/auth.middleware";
-import { JwtService } from "../../auth/jwt.service";
+} from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../auth/jwt.service.js";
 import {
   checkoutLimiter,
   writeLimiter,
-} from "../middlewares/rate-limit.middleware";
+} from "../middlewares/rate-limit.middleware.js";
 
 export const createOrderRoutes = (
   controller: OrderController,

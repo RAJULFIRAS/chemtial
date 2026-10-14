@@ -1,6 +1,6 @@
-import { ProductRepository } from "../../../domain/repositories/product.repository";
-import { ProductQueryDTO, ProductResponse } from "../../dtos/product.dto";
-import { ProductMapper } from "../../mappers/product.mapper";
+import { ProductRepository } from "../../../domain/repositories/product.repository.js";
+import { ProductQueryDTO, ProductResponse } from "../../dtos/product.dto.js";
+import { ProductMapper } from "../../mappers/product.mapper.js";
 
 export class GetProductsUseCase {
   constructor(private readonly productRepository: ProductRepository) {}

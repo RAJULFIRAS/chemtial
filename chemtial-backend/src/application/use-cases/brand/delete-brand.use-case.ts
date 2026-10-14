@@ -1,5 +1,5 @@
-import { BrandRepository } from "../../../domain/repositories/brand.repository";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { BrandRepository } from "../../../domain/repositories/brand.repository.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class DeleteBrandUseCase {
   constructor(private readonly brandRepository: BrandRepository) {}

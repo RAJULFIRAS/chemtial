@@ -1,6 +1,6 @@
-import { Product } from "../../../domain/entities/product.entity";
-import { ProductRepository } from "../../../domain/repositories/product.repository";
-import { prisma } from "../prisma/client";
+import { Product } from "../../../domain/entities/product.entity.js";
+import { ProductRepository } from "../../../domain/repositories/product.repository.js";
+import { prisma } from "../prisma/client.js";
 
 export class PrismaProductRepository implements ProductRepository {
   async findById(id: string): Promise<Product | null> {

@@ -1,5 +1,5 @@
-import { PromoRepository } from "../../../domain/repositories/promo.repository";
-import { PromoResponse } from "../../dtos/promo.dto";
+import { PromoRepository } from "../../../domain/repositories/promo.repository.js";
+import { PromoResponse } from "../../dtos/promo.dto.js";
 
 export class GetPromosUseCase {
   constructor(private readonly promoRepository: PromoRepository) {}

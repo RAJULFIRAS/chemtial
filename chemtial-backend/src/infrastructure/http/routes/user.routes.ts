@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { UserController } from "../controllers/user.controller";
-import { authMiddleware, managerOnly } from "../middlewares/auth.middleware";
-import { JwtService } from "../../auth/jwt.service";
+import { UserController } from "../controllers/user.controller.js";
+import { authMiddleware, managerOnly } from "../middlewares/auth.middleware.js";
+import { JwtService } from "../../auth/jwt.service.js";
 
 export const createUserRoutes = (
   controller: UserController,

@@ -1,6 +1,6 @@
-import { PromoRepository } from "../../../domain/repositories/promo.repository";
-import { PromoResponse } from "../../dtos/promo.dto";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { PromoRepository } from "../../../domain/repositories/promo.repository.js";
+import { PromoResponse } from "../../dtos/promo.dto.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class GetPromoByIdUseCase {
   constructor(private readonly promoRepository: PromoRepository) {}

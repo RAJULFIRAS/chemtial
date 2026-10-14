@@ -1,7 +1,7 @@
-import { ProductRepository } from "../../../domain/repositories/product.repository";
-import { UpdateProductDTO, ProductResponse } from "../../dtos/product.dto";
-import { ProductMapper } from "../../mappers/product.mapper";
-import { NotFoundError } from "../../../shared/exceptions/app.error";
+import { ProductRepository } from "../../../domain/repositories/product.repository.js";
+import { UpdateProductDTO, ProductResponse } from "../../dtos/product.dto.js";
+import { ProductMapper } from "../../mappers/product.mapper.js";
+import { NotFoundError } from "../../../shared/exceptions/app.error.js";
 
 export class UpdateProductUseCase {
   constructor(private readonly productRepository: ProductRepository) {}

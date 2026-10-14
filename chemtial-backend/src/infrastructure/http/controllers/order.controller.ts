@@ -1,20 +1,20 @@
 import { Request, Response, NextFunction } from "express";
-import { CreateOrderUseCase } from "../../../application/use-cases/order/create-order.use-case";
-import { GetOrdersUseCase } from "../../../application/use-cases/order/get-orders.use-case";
-import { GetOrderByIdUseCase } from "../../../application/use-cases/order/get-order-by-id.use-case";
-import { GetAllOrdersUseCase } from "../../../application/use-cases/order/get-all-orders.use-case";
-import { GetRevenueReportUseCase } from "../../../application/use-cases/order/get-revenue-report.use-case";
-import { UpdateOrderStatusUseCase } from "../../../application/use-cases/order/update-order-status.use-case";
-import { GetCodPendingUseCase } from "../../../application/use-cases/order/get-cod-pending.use-case";
-import { CancelMyOrderUseCase } from "../../../application/use-cases/order/cancel-my-order.use-case";
-import { RevenueRange } from "../../../application/use-cases/order/get-revenue-report.use-case";
-import { ConfirmCodReceivedUseCase } from "../../../application/use-cases/order/confirm-cod-received.use-case";
-import { GetOrderHistoryUseCase } from "../../../application/use-cases/order/get-order-history.use-case";
+import { CreateOrderUseCase } from "../../../application/use-cases/order/create-order.use-case.js";
+import { GetOrdersUseCase } from "../../../application/use-cases/order/get-orders.use-case.js";
+import { GetOrderByIdUseCase } from "../../../application/use-cases/order/get-order-by-id.use-case.js";
+import { GetAllOrdersUseCase } from "../../../application/use-cases/order/get-all-orders.use-case.js";
+import { GetRevenueReportUseCase } from "../../../application/use-cases/order/get-revenue-report.use-case.js";
+import { UpdateOrderStatusUseCase } from "../../../application/use-cases/order/update-order-status.use-case.js";
+import { GetCodPendingUseCase } from "../../../application/use-cases/order/get-cod-pending.use-case.js";
+import { CancelMyOrderUseCase } from "../../../application/use-cases/order/cancel-my-order.use-case.js";
+import { RevenueRange } from "../../../application/use-cases/order/get-revenue-report.use-case.js";
+import { ConfirmCodReceivedUseCase } from "../../../application/use-cases/order/confirm-cod-received.use-case.js";
+import { GetOrderHistoryUseCase } from "../../../application/use-cases/order/get-order-history.use-case.js";
 import {
   createOrderSchema,
   updateOrderStatusSchema,
-} from "../../../application/dtos/order.dto";
-import { ForbiddenError } from "../../../shared/exceptions/app.error";
+} from "../../../application/dtos/order.dto.js";
+import { ForbiddenError } from "../../../shared/exceptions/app.error.js";
 
 export class OrderController {
   constructor(

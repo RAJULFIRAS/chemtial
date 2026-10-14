@@ -1,4 +1,4 @@
-import { DownloadAnalytics } from "../../application/use-cases/download/get-download-analytics.use-case";
+import { DownloadAnalytics } from "../../application/use-cases/download/get-download-analytics.use-case.js";
 
 export interface DownloadRepository {
   track(data: {

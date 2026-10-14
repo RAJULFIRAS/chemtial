@@ -1,5 +1,5 @@
-import { StripeService } from "../../payment/stripe.service";
-import { GetOrderByIdUseCase } from "../../../application/use-cases/order/get-order-by-id.use-case";
+import { StripeService } from "../../payment/stripe.service.js";
+import { GetOrderByIdUseCase } from "../../../application/use-cases/order/get-order-by-id.use-case.js";
 import { Request, Response, NextFunction } from "express";
 
 export class PaymentController {

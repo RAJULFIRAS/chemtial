@@ -1,6 +1,6 @@
-import { UserRepository } from "../../../domain/repositories/user.repository";
-import { UserQueryDTO } from "../../dtos/user.dto";
-import { ROLE_HIERARCHY, Role } from "../../../shared/constants/roles";
+import { UserRepository } from "../../../domain/repositories/user.repository.js";
+import { UserQueryDTO } from "../../dtos/user.dto.js";
+import { ROLE_HIERARCHY, Role } from "../../../shared/constants/roles.js";
 
 export class GetUsersUseCase {
   constructor(private readonly userRepository: UserRepository) {}

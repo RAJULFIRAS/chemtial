@@ -1,13 +1,13 @@
-import { OrderRepository } from "../../../domain/repositories/order.repository";
-import { AuditLogRepository } from "../../../domain/repositories/audit-log.repository";
-import { OrderStatusHistoryRepository } from "../../../domain/repositories/order-status-history.repository";
-import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository";
-import { VoucherRepository } from "../../../domain/repositories/voucher.repository";
-import { Order } from "../../../domain/entities/order.entity";
+import { OrderRepository } from "../../../domain/repositories/order.repository.js";
+import { AuditLogRepository } from "../../../domain/repositories/audit-log.repository.js";
+import { OrderStatusHistoryRepository } from "../../../domain/repositories/order-status-history.repository.js";
+import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository.js";
+import { VoucherRepository } from "../../../domain/repositories/voucher.repository.js";
+import { Order } from "../../../domain/entities/order.entity.js";
 import {
   NotFoundError,
   ValidationError,
-} from "../../../shared/exceptions/app.error";
+} from "../../../shared/exceptions/app.error.js";
 
 export class UpdateOrderStatusUseCase {
   constructor(

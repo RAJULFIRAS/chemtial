@@ -1,6 +1,6 @@
 import { Brand } from "@prisma/client";
-import { prisma } from "../prisma/client";
-import { BrandRepository } from "../../../domain/repositories/brand.repository";
+import { prisma } from "../prisma/client.js";
+import { BrandRepository } from "../../../domain/repositories/brand.repository.js";
 
 export class PrismaBrandRepository implements BrandRepository {
   async findById(id: string): Promise<Brand | null> {

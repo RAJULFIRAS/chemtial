@@ -1,6 +1,6 @@
 import { Promo } from "@prisma/client";
-import { prisma } from "../prisma/client";
-import { PromoRepository } from "../../../domain/repositories/promo.repository";
+import { prisma } from "../prisma/client.js";
+import { PromoRepository } from "../../../domain/repositories/promo.repository.js";
 
 export class PrismaPromoRepository implements PromoRepository {
   async findById(id: string): Promise<Promo | null> {

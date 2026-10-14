@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { TrackDownloadUseCase } from "../../../application/use-cases/download/track-download.use-case";
-import { GetDownloadStatsUseCase } from "../../../application/use-cases/download/get-download-stats.use-case";
-import { GetDownloadAnalyticsUseCase } from "../../../application/use-cases/download/get-download-analytics.use-case";
-import { trackDownloadSchema } from "../../../application/dtos/download.dto";
+import { TrackDownloadUseCase } from "../../../application/use-cases/download/track-download.use-case.js";
+import { GetDownloadStatsUseCase } from "../../../application/use-cases/download/get-download-stats.use-case.js";
+import { GetDownloadAnalyticsUseCase } from "../../../application/use-cases/download/get-download-analytics.use-case.js";
+import { trackDownloadSchema } from "../../../application/dtos/download.dto.js";
 
 export class DownloadController {
   constructor(

@@ -1,5 +1,5 @@
-import { DownloadRepository } from "../../../domain/repositories/download.repository";
-import { DownloadStatsResponse } from "../../dtos/download.dto";
+import { DownloadRepository } from "../../../domain/repositories/download.repository.js";
+import { DownloadStatsResponse } from "../../dtos/download.dto.js";
 
 export class GetDownloadStatsUseCase {
   constructor(private readonly downloadRepository: DownloadRepository) {}

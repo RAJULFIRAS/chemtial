@@ -1,9 +1,9 @@
-import { User } from "../../../domain/entities/user.entity";
-import { UserRepository } from "../../../domain/repositories/user.repository";
-import { PasswordService } from "../../../infrastructure/auth/password.service";
-import { JwtService } from "../../../infrastructure/auth/jwt.service";
-import { RegisterDTO, AuthResponse } from "../../dtos/auth.dto";
-import { ConflictError } from "../../../shared/exceptions/app.error";
+import { User } from "../../../domain/entities/user.entity.js";
+import { UserRepository } from "../../../domain/repositories/user.repository.js";
+import { PasswordService } from "../../../infrastructure/auth/password.service.js";
+import { JwtService } from "../../../infrastructure/auth/jwt.service.js";
+import { RegisterDTO, AuthResponse } from "../../dtos/auth.dto.js";
+import { ConflictError } from "../../../shared/exceptions/app.error.js";
 
 export class RegisterUseCase {
   constructor(

@@ -1,8 +1,8 @@
-import { prisma } from "../prisma/client";
+import { prisma } from "../prisma/client.js";
 import {
   OrderStatusHistoryEntry,
   OrderStatusHistoryRepository,
-} from "../../../domain/repositories/order-status-history.repository";
+} from "../../../domain/repositories/order-status-history.repository.js";
 
 export class PrismaOrderStatusHistoryRepository implements OrderStatusHistoryRepository {
   async create(data: {

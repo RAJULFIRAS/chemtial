@@ -1,4 +1,4 @@
-import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository";
+import { VoucherUsageRepository } from "../../../domain/repositories/voucher-usage.repository.js";
 
 export interface MyVoucherResponse {
   usageId: string;
