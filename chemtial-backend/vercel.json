@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "prisma generate && tsc",
-  "installCommand": "npm install --legacy-peer-deps",
+  "buildCommand": "npx prisma generate && npx tsc",
+  "installCommand": "npm install --legacy-peer-deps --include=dev",
   "functions": {
     "api/index.ts": {
       "includeFiles": "prisma/**",
