@@ -5,8 +5,13 @@ build/
 coverage/
 
 .env
-.env.*
+.env.local
+.env.*.local
+.env.production
+.env.development
+
 !.env.example
+!.env.production.example
 
 logs/
 *.log

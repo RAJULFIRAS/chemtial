@@ -1,13 +1,21 @@
 {
-  "buildCommand": "prisma generate && tsc",
-  "installCommand": "npm install",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "buildCommand": "prisma generate && tsc",
+  "installCommand": "npm install --legacy-peer-deps",
+  "outputDirectory": null,
   "functions": {
     "api/index.ts": {
-      "includeFiles": "prisma/**",
+      "includeFiles": ["prisma/**", "node_modules/.prisma/**"],
       "maxDuration": 60,
-      "memory": 1024
+      "memory": 1024,
+      "runtime": "nodejs20.x"
     }
   },
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/index.ts" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.ts"
+    }
+  ]
 }
