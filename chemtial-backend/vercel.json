@@ -3,11 +3,11 @@
   "framework": null,
   "buildCommand": "npx prisma generate && npx tsc",
   "installCommand": "npm install --legacy-peer-deps --include=dev",
+  "outputDirectory": "public",
   "functions": {
     "api/index.ts": {
       "includeFiles": "prisma/**",
-      "maxDuration": 60,
-      "memory": 1024
+      "maxDuration": 60
     }
   },
   "rewrites": [
