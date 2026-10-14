@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-import fs from "fs";
+import { put } from "@vercel/blob";
 import path from "path";
 import crypto from "crypto";
-import { config } from "../../../config/env.validation";
 import { ValidationError } from "../../../shared/exceptions/app.error";
+import { logger } from "../../../shared/utils/logger";
 
 type UploadFolder =
   | "products"
@@ -17,48 +17,77 @@ const IMAGE_MAX_SIZE = 5 * 1024 * 1024;
 const VIDEO_MAX_SIZE = 20 * 1024 * 1024;
 
 export class UploadController {
-  private saveBufferToDisk(
+  private async uploadToBlob(
     file: Express.Multer.File,
     folder: UploadFolder,
-  ): { relativePath: string; filename: string; url: string } {
-    const uploadDir = path.resolve(config.UPLOAD_DIR);
-    const targetDir = path.join(uploadDir, folder);
-    if (!fs.existsSync(targetDir)) {
-      fs.mkdirSync(targetDir, { recursive: true });
-    }
-
+  ): Promise<{
+    path: string;
+    filename: string;
+    url: string;
+    originalName: string;
+    mimetype: string;
+    size: number;
+  }> {
     const ext = path.extname(file.originalname).toLowerCase() || ".jpg";
     const uniqueId = crypto.randomBytes(8).toString("hex");
     const filename = `${folder}-${Date.now()}-${uniqueId}${ext}`;
-    const filepath = path.join(targetDir, filename);
+    const blobPath = `${folder}/${filename}`;
 
-    fs.writeFileSync(filepath, file.buffer);
+    const token = process.env.BLOB_READ_WRITE_TOKEN;
+    if (!token) {
+      throw new ValidationError("BLOB_READ_WRITE_TOKEN is not configured");
+    }
 
-    const relativePath = `uploads/${folder}/${filename}`;
-    const url = `${config.BASE_URL}/${relativePath}`;
+    try {
+      const blob = await put(blobPath, file.buffer, {
+        access: "public",
+        contentType: file.mimetype,
+        token,
+      });
 
-    return { relativePath, filename, url };
+      logger.info(
+        `[UploadController] Uploaded to Blob: ${blob.url} (${file.size} bytes)`,
+      );
+
+      return {
+        path: blob.url,
+        filename,
+        url: blob.url,
+        originalName: file.originalname,
+        mimetype: file.mimetype,
+        size: file.size,
+      };
+    } catch (error) {
+      logger.error({ err: error }, "[UploadController] Blob upload failed");
+      throw new ValidationError(
+        error instanceof Error ? error.message : "Upload to Blob failed",
+      );
+    }
   }
 
   private createHandler(folder: UploadFolder) {
-    return (req: Request, res: Response, next: NextFunction): void => {
+    return async (
+      req: Request,
+      res: Response,
+      next: NextFunction,
+    ): Promise<void> => {
       try {
         const file = req.file;
         if (!file) {
           throw new ValidationError("No file uploaded");
         }
 
-        const saved = this.saveBufferToDisk(file, folder);
+        const saved = await this.uploadToBlob(file, folder);
 
         res.status(201).json({
           success: true,
           data: {
-            path: saved.relativePath,
+            path: saved.path,
             url: saved.url,
             filename: saved.filename,
-            originalName: file.originalname,
-            mimetype: file.mimetype,
-            size: file.size,
+            originalName: saved.originalName,
+            mimetype: saved.mimetype,
+            size: saved.size,
           },
           message: "File uploaded successfully",
         });
@@ -73,7 +102,11 @@ export class UploadController {
   uploadCategory = this.createHandler("categories");
   uploadPromo = this.createHandler("promos");
 
-  uploadBanner = (req: Request, res: Response, next: NextFunction): void => {
+  uploadBanner = async (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
     try {
       const file = req.file;
       if (!file) {
@@ -89,17 +122,17 @@ export class UploadController {
         throw new ValidationError("Gambar maksimal 5MB");
       }
 
-      const saved = this.saveBufferToDisk(file, "banners");
+      const saved = await this.uploadToBlob(file, "banners");
 
       res.status(201).json({
         success: true,
         data: {
-          path: saved.relativePath,
+          path: saved.path,
           url: saved.url,
           filename: saved.filename,
-          originalName: file.originalname,
-          mimetype: file.mimetype,
-          size: file.size,
+          originalName: saved.originalName,
+          mimetype: saved.mimetype,
+          size: saved.size,
           mediaType: isVideo ? "video" : "image",
         },
         message: "File uploaded successfully",

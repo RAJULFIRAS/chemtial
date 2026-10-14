@@ -3,10 +3,8 @@ import "./config/load-env.js";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import path from "path";
 
 import { config } from "./config/env.validation.js";
-import { logger } from "./shared/utils/logger.js";
 import { prisma } from "./infrastructure/database/prisma/client.js";
 
 import { errorMiddleware } from "./infrastructure/http/middlewares/error.middleware.js";
@@ -145,20 +143,6 @@ app.use(
   cors({
     origin: config.CORS_ORIGIN.split(","),
     credentials: true,
-  }),
-);
-
-const uploadPath = path.resolve(process.cwd(), "uploads");
-app.use(
-  "/uploads",
-  (_req, res, next) => {
-    res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Cache-Control", "public, max-age=31536000");
-    next();
-  },
-  express.static(uploadPath, {
-    fallthrough: true,
   }),
 );
 
@@ -455,36 +439,5 @@ app.use("/api/downloads", createDownloadRoutes(downloadController, jwtService));
 app.use("/api/users", createUserRoutes(userController, jwtService));
 
 app.use(errorMiddleware);
-
-const PORT = config.PORT;
-
-if (process.env.NODE_ENV !== "test") {
-  const server = app.listen(PORT, () => {
-    logger.info(`Server running on port ${PORT}`);
-    logger.info(`Environment: ${config.NODE_ENV}`);
-    logger.info(`API URL: http://localhost:${PORT}/api`);
-  });
-
-  server.on("error", (error: NodeJS.ErrnoException) => {
-    if (error.code === "EADDRINUSE") {
-      logger.error(
-        `Port ${PORT} is already in use. Kill the process using it or change PORT in .env.`,
-      );
-      process.exit(1);
-    }
-    throw error;
-  });
-
-  const shutdown = async (signal: string) => {
-    logger.info(`${signal} received — shutting down...`);
-    server.close(async () => {
-      await prisma.$disconnect();
-      process.exit(0);
-    });
-  };
-
-  process.on("SIGINT", () => shutdown("SIGINT"));
-  process.on("SIGTERM", () => shutdown("SIGTERM"));
-}
 
 export { app };
