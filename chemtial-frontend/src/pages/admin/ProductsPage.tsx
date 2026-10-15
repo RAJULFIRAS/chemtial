@@ -555,7 +555,7 @@ const ProductsPage: React.FC = () => {
               <option value="">Select Category</option>
               {categories.map((c) => (
                 <option key={c.id} value={c.id}>
-                  {c.name}
+                  {c.nameEn || c.name}
                 </option>
               ))}
             </select>

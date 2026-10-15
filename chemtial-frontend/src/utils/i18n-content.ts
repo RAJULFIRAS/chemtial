@@ -9,11 +9,20 @@ export const getLocalizedName = (item: {
   nameAr?: string | null;
 }): string => {
   const lang = i18n.language;
-  if (lang === "en" && item.nameEn) return item.nameEn;
-  if (lang === "zh" && item.nameZh) return item.nameZh;
-  if (lang === "hi" && item.nameHi) return item.nameHi;
-  if (lang === "ru" && item.nameRu) return item.nameRu;
-  if (lang === "ar" && item.nameAr) return item.nameAr;
+
+  const map: Record<string, string | null | undefined> = {
+    en: item.nameEn,
+    zh: item.nameZh,
+    hi: item.nameHi,
+    ru: item.nameRu,
+    ar: item.nameAr,
+  };
+
+  const localized = map[lang];
+  if (localized) return localized;
+
+  if (lang !== "en" && item.nameEn) return item.nameEn;
+
   return item.name;
 };
 
@@ -26,10 +35,40 @@ export const getLocalizedDescription = (item: {
   descriptionAr?: string | null;
 }): string => {
   const lang = i18n.language;
-  if (lang === "en" && item.descriptionEn) return item.descriptionEn;
-  if (lang === "zh" && item.descriptionZh) return item.descriptionZh;
-  if (lang === "hi" && item.descriptionHi) return item.descriptionHi;
-  if (lang === "ru" && item.descriptionRu) return item.descriptionRu;
-  if (lang === "ar" && item.descriptionAr) return item.descriptionAr;
+
+  const map: Record<string, string | null | undefined> = {
+    en: item.descriptionEn,
+    zh: item.descriptionZh,
+    hi: item.descriptionHi,
+    ru: item.descriptionRu,
+    ar: item.descriptionAr,
+  };
+
+  const localized = map[lang];
+  if (localized) return localized;
+
+  if (lang !== "en" && item.descriptionEn) return item.descriptionEn;
+
   return item.description || "";
+};
+
+export const hasTranslation = (
+  item: {
+    nameEn?: string | null;
+    nameZh?: string | null;
+    nameHi?: string | null;
+    nameRu?: string | null;
+    nameAr?: string | null;
+  },
+  lang: "en" | "zh" | "hi" | "ru" | "ar",
+): boolean => {
+  const map: Record<string, string | null | undefined> = {
+    en: item.nameEn,
+    zh: item.nameZh,
+    hi: item.nameHi,
+    ru: item.nameRu,
+    ar: item.nameAr,
+  };
+  const value = map[lang];
+  return typeof value === "string" && value.trim().length > 0;
 };
