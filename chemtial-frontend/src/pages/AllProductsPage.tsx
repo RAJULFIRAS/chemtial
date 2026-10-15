@@ -10,6 +10,7 @@ import { fetchBrands } from "../store/slices/brandSlice";
 import ProductGrid from "../components/home/ProductGrid";
 import Button from "../components/common/Button";
 import { useDebounce } from "../hooks/useDebounce";
+import { getLocalizedName } from "../utils/i18n-content";
 
 const ProductsPage: React.FC = () => {
   const { t } = useTranslation();
@@ -164,7 +165,7 @@ const ProductsPage: React.FC = () => {
                 <option value="">{t("products.all_categories")}</option>
                 {categories.map((cat) => (
                   <option key={cat.id} value={cat.id}>
-                    {cat.name}
+                    {getLocalizedName(cat)}
                   </option>
                 ))}
               </select>

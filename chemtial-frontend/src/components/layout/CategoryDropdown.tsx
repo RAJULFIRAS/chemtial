@@ -6,6 +6,7 @@ import { RootState, AppDispatch } from "../../store";
 import { fetchCategories } from "../../store/slices/categorySlice";
 import { apiClient } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { getLocalizedName } from "../../utils/i18n-content";
 
 interface ProductItem {
   id: string;
@@ -24,7 +25,7 @@ const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
   onClose,
   onCategorySelect,
 }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const { categories, isLoading } = useSelector(
     (state: RootState) => state.category,
@@ -90,11 +91,6 @@ const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
 
   if (!isOpen) return null;
 
-  const getName = (item: { name: string; nameEn: string | null }): string => {
-    if (i18n.language === "en" && item.nameEn) return item.nameEn;
-    return item.name;
-  };
-
   const hoveredCategory = categories.find((c) => c.id === hoveredCategoryId);
   const currentProducts = hoveredCategoryId
     ? productsByCategory[hoveredCategoryId] || []
@@ -136,7 +132,7 @@ const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
                   }`}
                 >
                   <span className="text-sm font-medium">
-                    {getName(category)}
+                    {getLocalizedName(category)}
                   </span>
                   <ChevronRight
                     size={16}
@@ -167,7 +163,7 @@ const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
                       }}
                       className="w-full text-left px-3 py-2 text-sm text-secondary hover:bg-gray-50 hover:text-primary rounded-lg transition-colors"
                     >
-                      {getName(product)}
+                      {getLocalizedName(product)}
                     </button>
                   ))}
                 </div>

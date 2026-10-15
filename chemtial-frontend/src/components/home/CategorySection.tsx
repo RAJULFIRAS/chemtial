@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { ChevronRight, Layers } from "lucide-react";
 import { RootState, AppDispatch } from "../../store";
 import { fetchCategories } from "../../store/slices/categorySlice";
+import { getLocalizedName } from "../../utils/i18n-content";
 
 const CategorySection: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { categories, isLoading } = useSelector(
@@ -43,11 +44,6 @@ const CategorySection: React.FC = () => {
     return null;
   }
 
-  const getName = (cat: { name: string; nameEn: string | null }): string => {
-    if (i18n.language === "en" && cat.nameEn) return cat.nameEn;
-    return cat.name;
-  };
-
   const displayCategories = categories.slice(0, 6);
 
   return (
@@ -73,7 +69,7 @@ const CategorySection: React.FC = () => {
             className="group text-center p-4 bg-gray-50 rounded-2xl hover:bg-primary/5 transition-all hover:shadow-md"
           >
             <h3 className="font-medium text-secondary group-hover:text-primary text-sm line-clamp-2 mb-1">
-              {getName(category)}
+              {getLocalizedName(category)}
             </h3>
             <p className="text-xs text-secondary/60">
               {category.productCount || 0} {t("navbar.products")}
