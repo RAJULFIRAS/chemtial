@@ -8,6 +8,7 @@ import Input from "../../components/common/Input";
 import Button from "../../components/common/Button";
 import { UserPlus } from "lucide-react";
 import toast from "react-hot-toast";
+import bgLogin from "../../asset/image/bg-login.jpg";
 
 const RegisterPage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -37,8 +38,8 @@ const RegisterPage: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: "url('src/asset/image/logo/bg-login.jpg')" }}
+      className="min-h-screen flex items-center justify-center py-12 px-4 ..."
+      style={{ backgroundImage: `url(${bgLogin})` }}
     >
       <div className="relative z-10 max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 sm:p-10 space-y-6">
         <div>
